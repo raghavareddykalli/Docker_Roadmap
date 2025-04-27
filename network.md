@@ -24,6 +24,8 @@ In this session, we explored Docker networking, also known as Container Networki
 ## Docker Networking Modules
 
 **1.Bridge Network (Default):**
+![image](https://github.com/user-attachments/assets/fc22c764-404a-42f7-8cdf-b96a4588c2b6)
+
 
  -Separate container and host subnets.
 
@@ -66,13 +68,19 @@ Run the below command and observe the network type and ip address for both the c
 
 Output
 
+![image](https://github.com/user-attachments/assets/6cf1077c-aeea-4100-b1cc-bf66092f051a)
+
+
 ```docker inspect logout```
 
 Output
 
+![image](https://github.com/user-attachments/assets/ea496097-5e7b-4d2c-800f-d96f6ed78135)
+
+
 In the above images we observed that both the containers have Bridge network and belong to the same subnet address.
 
-Login into one of the containers
+Log in to one of the containers
 
 ```docker exec -it login /bin/bash```
 
@@ -83,11 +91,14 @@ apt update
 apt-get install iputils-ping -y
 ```
 
-Now ping the logout ip address and observe that user should be able to ping the address.
+Now, ping the logout ip address and observe that the user should be able to ping the address.
 
 ```ping 172.17.0.6```
 
 Output
+
+![image](https://github.com/user-attachments/assets/f6c50052-d730-4856-9c35-f416da529a00)
+
 
 Created a custom bridge network (secure-network).
 
@@ -97,21 +108,24 @@ Create a container and use this custom bridge network
 
 ```docker run -d --name finance --network=secure-network nginx:latest```
 
-Again observe the Network type and the ip address using the inspect command
+Again, observe the Network type and the ip address using the inspect command
 
 ```docker inspect finance```
 
 Output
 
-We observed that Network is secure-network and the ip address is not in the same subnet as of login and logout.
+![image](https://github.com/user-attachments/assets/a7da1193-ab5a-4d15-b527-93fae35ea2b2)
 
-Verifiy that containers in different networks could not ping each other (achieving isolation).
+
+We observed that the Network is secure-network and the ip address is not in the same subnet as the login and logout.
+
+Verify that containers in different networks cannot ping each other (achieving isolation).
 
 Creating a container (host-demo) using host networking, where no separate container IP is assigned — it shares the host’s IP.
 
 ```docker run -d --name host-demo --network=host nginx:latest```
 
-Observe the Network type and the ip address using inspect command
+Observe the Network type and the ip address using the inspect command
  
 
 ## Important Notes:
