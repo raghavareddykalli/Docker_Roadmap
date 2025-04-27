@@ -13,7 +13,7 @@ A. Docker is an open-source containerization platform used to build, deploy, and
 
    -Unlike virtual machines, containers share the host OS kernel and only package minimal   system dependencies, making them lightweight and faster to start.
 
-    If you get stuck explaining, give an example: running a Java application inside a container needs only the app, Java runtime, and required system libraries — not a full OS.
+   If you get stuck explaining, give an example: running a Java application inside a container needs only the app, Java runtime, and required system libraries — not a full OS.
 
 
 **2. What is the difference between Containers and Virtual Machines?**
@@ -29,13 +29,13 @@ A. Containers are lightweight because they share the host OS, while VMs are heav
 
 A. Docker lifecycle refers to the steps to containerize an application:
 
-    -Write a Dockerfile with instructions.
+   -Write a Dockerfile with instructions.
 
-    -Build a Docker image using the Dockerfile.
+   -Build a Docker image using the Dockerfile.
 
-    -Run a Docker container from the image.
+   -Run a Docker container from the image.
 
-    -Manage containers (start, stop, remove) as needed.
+   -Manage containers (start, stop, remove) as needed.
 
   In interviews, mention your personal approach: you start from Dockerfile creation, build an image, and then run containers — demonstrating hands-on understanding.
 
@@ -44,24 +44,24 @@ A. Docker lifecycle refers to the steps to containerize an application:
 
 A. The key Docker components are:
 
-     -Docker Client (CLI): Sends commands to the Docker Daemon.
+   -Docker Client (CLI): Sends commands to the Docker Daemon.
 
-     -Docker Daemon: Core engine running on the host, executes container operations.
+   -Docker Daemon: Core engine running on the host, executes container operations.
 
-     -Docker Images: Templates used to create containers.
+   -Docker Images: Templates used to create containers.
 
-     -Docker Containers: Running instances of images.
+   -Docker Containers: Running instances of images.
 
-     -Docker Registry: Stores and distributes Docker images (e.g., Docker Hub).
+   -Docker Registry: Stores and distributes Docker images (e.g., Docker Hub).
 
 
 **5. What is the difference between Docker COPY and Docker ADD?**
 
 A. COPY: Simple copying of files/directories from the local filesystem into the container.
 
-    ADD: Can copy local files and download from remote URLs automatically.
+   ADD: Can copy local files and download from remote URLs automatically.
 
-    ADD is used if you want Docker to fetch files over HTTP/HTTPS (like using wget or curl internally). However, best practice recommends using COPY unless you specifically need URL download functionality.
+   ADD is used if you want Docker to fetch files over HTTP/HTTPS (like using wget or curl internally). However, best practice recommends using COPY unless you specifically need URL download functionality.
 
 
 **6. What is the difference between CMD and ENTRYPOINT?**
@@ -146,7 +146,7 @@ A. Docker Daemon Single Point of Failure: If the daemon fails, containers stop w
 
    Extra Explanation:
 
-    Solutions include using Podman (rootless containers), properly setting resource limits (--  memory, --cpu-shares), and isolating critical containers with custom networks.
+   Solutions include using Podman (rootless containers), properly setting resource limits (--  memory, --cpu-shares), and isolating critical containers with custom networks.
 
 
 **12. How to scan Docker container images for vulnerabilities?**
@@ -155,6 +155,6 @@ A. You can use tools like Snyk, Clair, Trivy, or Docker Hub's built-in scanning 
 
    Extra Explanation:
 
-    Regular scanning is critical because containers might pull old libraries or dependencies with known security flaws.
+   Regular scanning is critical because containers might pull old libraries or dependencies with known security flaws.
 
-    For production environments, it’s mandatory to integrate image scanning into CI/CD pipelines.
+   For production environments, it’s mandatory to integrate image scanning into CI/CD pipelines.
