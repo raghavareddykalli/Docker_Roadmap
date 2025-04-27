@@ -24,6 +24,7 @@ In this session, we explored Docker networking, also known as Container Networki
 ## Docker Networking Modules
 
 **1.Bridge Network (Default):**
+
 ![image](https://github.com/user-attachments/assets/fc22c764-404a-42f7-8cdf-b96a4588c2b6)
 
 
